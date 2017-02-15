@@ -1,0 +1,62 @@
+<div>
+    <h2 data-translate="assignment2App.salesPerson.home.title">Sales People</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="sales-person.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="assignment2App.salesPerson.home.createLabel">
+                        Create new Sales Person
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="assignment2App.salesPerson.name">Name</span></th>
+                    <th><span data-translate="assignment2App.salesPerson.cust_id">Cust Id</span></th>
+                    <th><span data-translate="assignment2App.salesPerson.salesToCar">Sales To Car</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="salesPerson in vm.salesPeople track by salesPerson.id">
+                    <td><a ui-sref="sales-person-detail({id:salesPerson.id})">{{salesPerson.id}}</a></td>
+                    <td>{{salesPerson.name}}</td>
+                    <td>{{salesPerson.cust_id}}</td>
+                    <td>
+                        <a ui-sref="car-detail({id:salesPerson.salesToCar.id})">{{salesPerson.salesToCar.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="sales-person-detail({id:salesPerson.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="sales-person.edit({id:salesPerson.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="sales-person.delete({id:salesPerson.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="assignment2App.salesPerson.detail.title">Sales Person</span> {{vm.salesPerson.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="assignment2App.salesPerson.name">Name</span></dt>
+        <dd>
+            <span>{{vm.salesPerson.name}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.salesPerson.cust_id">Cust Id</span></dt>
+        <dd>
+            <span>{{vm.salesPerson.cust_id}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.salesPerson.salesToCar">Sales To Car</span></dt>
+        <dd>
+            <a ui-sref="car-detail({id:vm.salesPerson.salesToCar.id})">{{vm.salesPerson.salesToCar.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="sales-person-detail.edit({id:vm.salesPerson.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,24 @@
+{
+    "assignment2App": {
+        "salesPerson" : {
+            "home": {
+                "title": "Sales People",
+                "createLabel": "Create a new Sales Person",
+                "createOrEditLabel": "Create or edit a Sales Person",
+                "search": "Search for Sales Person"
+            },
+            "created": "A new Sales Person is created with identifier {{ param }}",
+            "updated": "A Sales Person is updated with identifier {{ param }}",
+            "deleted": "A Sales Person is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Sales Person {{ id }}?"
+            },
+            "detail": {
+                "title": "Sales Person"
+            },
+            "name": "Name",
+            "cust_id": "Cust Id",
+            "salesToCar": "Sales To Car"
+        }
+    }
+}
